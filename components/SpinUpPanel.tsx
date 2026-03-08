@@ -26,8 +26,8 @@ export default function SpinUpPanel() {
     <div className="panel" style={{ height: '100%' }}>
       <div className="panel-header">
         <span>⚙</span>
-        <span>SPIN UP</span>
-        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>// 起動</span>
+        <span>RESUME</span>
+        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>// 再開</span>
         {tasks && tasks.length > 0 && (
           <span
             style={{

@@ -74,7 +74,7 @@ export default function CommandBar() {
             letterSpacing: '0.05em',
           }}
         >
-          // 制御
+          // 愛猫
         </span>
         <div
           style={{
