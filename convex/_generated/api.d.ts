@@ -10,6 +10,7 @@
 
 import type * as activities from "../activities.js";
 import type * as agents from "../agents.js";
+import type * as calendar from "../calendar.js";
 import type * as content from "../content.js";
 import type * as http from "../http.js";
 import type * as inbox from "../inbox.js";
@@ -27,6 +28,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   activities: typeof activities;
   agents: typeof agents;
+  calendar: typeof calendar;
   content: typeof content;
   http: typeof http;
   inbox: typeof inbox;

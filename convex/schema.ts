@@ -134,6 +134,29 @@ export default defineSchema({
     .index("by_status", ["status"])
     .index("by_project", ["project"]),
 
+  // Calendar events — synced from Google Calendar
+  calendar: defineTable({
+    eventId: v.string(), // Google Calendar event ID (for dedup)
+    title: v.string(),
+    startTime: v.string(), // ISO datetime
+    endTime: v.string(), // ISO datetime
+    attendees: v.optional(v.array(v.object({
+      name: v.optional(v.string()),
+      email: v.string(),
+      self: v.optional(v.boolean()),
+    }))),
+    location: v.optional(v.string()),
+    meetLink: v.optional(v.string()),
+    description: v.optional(v.string()),
+    project: v.optional(v.string()), // matched project if identifiable
+    leadId: v.optional(v.id("leads")),
+    prepNotes: v.optional(v.string()), // AI-generated prep notes
+    status: v.string(), // "upcoming", "in_progress", "completed", "cancelled"
+  })
+    .index("by_eventId", ["eventId"])
+    .index("by_startTime", ["startTime"])
+    .index("by_status", ["status"]),
+
   // Readings — articles, tweets, threads, videos Alex saves
   readings: defineTable({
     url: v.string(),

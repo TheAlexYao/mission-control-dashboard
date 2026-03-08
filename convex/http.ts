@@ -190,6 +190,63 @@ http.route({
   }),
 });
 
+// Calendar sync — upsert events from GWS
+// POST /calendar { events: [{ eventId, title, startTime, endTime, attendees?, location?, meetLink?, description? }] }
+http.route({
+  path: "/calendar",
+  method: "POST",
+  handler: httpAction(async (ctx, request) => {
+    try {
+      const body = await request.json();
+      const { events } = body;
+
+      if (!events || !Array.isArray(events)) {
+        return new Response(
+          JSON.stringify({ error: "Missing required field: events (array)" }),
+          { status: 400, headers: corsHeaders() }
+        );
+      }
+
+      let upserted = 0;
+      for (const event of events) {
+        if (!event.eventId || !event.title || !event.startTime || !event.endTime) {
+          continue;
+        }
+        await ctx.runMutation(api.calendar.upsert, {
+          eventId: event.eventId,
+          title: event.title,
+          startTime: event.startTime,
+          endTime: event.endTime,
+          attendees: event.attendees ?? undefined,
+          location: event.location ?? undefined,
+          meetLink: event.meetLink ?? undefined,
+          description: event.description ?? undefined,
+          project: event.project ?? undefined,
+          prepNotes: event.prepNotes ?? undefined,
+          status: event.status ?? undefined,
+        });
+        upserted++;
+      }
+
+      await ctx.runMutation(api.activities.log, {
+        agent: "system",
+        action: "calendar_sync",
+        summary: `Synced ${upserted} calendar events`,
+      });
+
+      return new Response(
+        JSON.stringify({ ok: true, upserted }),
+        { status: 200, headers: corsHeaders() }
+      );
+    } catch {
+      return new Response(
+        JSON.stringify({ error: "Invalid JSON body" }),
+        { status: 400, headers: corsHeaders() }
+      );
+    }
+  }),
+});
+
 // Health check
 http.route({
   path: "/health",
