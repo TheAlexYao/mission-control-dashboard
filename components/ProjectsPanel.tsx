@@ -56,7 +56,7 @@ export default function ProjectsPanel() {
       <div className="panel-header">
         <span>◈</span>
         <span>PROJECTS</span>
-        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>// プロジェクト</span>
+        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>プロジェクト</span>
       </div>
       <div className="panel-body" style={{ padding: '6px 0' }}>
         {PROJECTS.map((project) => {

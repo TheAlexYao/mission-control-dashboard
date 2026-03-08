@@ -149,7 +149,7 @@ export default function ActivityTimeline({
       <div className="panel-header">
         <span>⟳</span>
         <span>ACTIVITY</span>
-        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>// アクティビティ</span>
+        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>アクティビティ</span>
         {selectedAgent && (
           <span style={{
             fontFamily: 'IBM Plex Mono, monospace',

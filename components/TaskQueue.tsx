@@ -234,7 +234,7 @@ export default function TaskQueue({
       <div className="panel-header">
         <span>☰</span>
         <span>TASK QUEUE</span>
-        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>// タスク</span>
+        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>タスク</span>
         <span style={{
           marginLeft: 'auto',
           fontFamily: 'IBM Plex Mono, monospace',

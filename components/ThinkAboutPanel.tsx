@@ -40,7 +40,7 @@ export default function ThinkAboutPanel() {
       <div className="panel-header">
         <span>◉</span>
         <span>THINK ABOUT</span>
-        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>// 考える</span>
+        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>考える</span>
         {thinkItems.length > 0 && (
           <span style={{
             marginLeft: 'auto',

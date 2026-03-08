@@ -3,7 +3,7 @@ import "./globals.css";
 import { ConvexClientProvider } from "./providers";
 
 export const metadata: Metadata = {
-  title: "AINEKO // 愛猫",
+  title: "AINEKO 愛猫",
   description: "Mission Control Dashboard",
 };
 

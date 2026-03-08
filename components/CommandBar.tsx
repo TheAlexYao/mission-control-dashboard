@@ -74,7 +74,7 @@ export default function CommandBar() {
             letterSpacing: '0.05em',
           }}
         >
-          // 愛猫
+          愛猫
         </span>
         <div
           style={{
@@ -91,13 +91,13 @@ export default function CommandBar() {
         <NavTab
           href="/"
           label="MISSION"
-          kanji="ミッション"
+          kanji="任務"
           active={pathname === '/'}
         />
         <NavTab
           href="/agents"
           label="AGENTS"
-          kanji="エージェント"
+          kanji="隊"
           active={pathname === '/agents'}
         />
       </div>

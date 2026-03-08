@@ -27,7 +27,7 @@ export default function SpinUpPanel() {
       <div className="panel-header">
         <span>⚙</span>
         <span>RESUME</span>
-        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>// 再開</span>
+        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>再開</span>
         {tasks && tasks.length > 0 && (
           <span
             style={{

@@ -63,7 +63,7 @@ export default function UpcomingPanel() {
       <div className="panel-header">
         <span>📅</span>
         <span>UPCOMING</span>
-        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>// 予定</span>
+        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>予定</span>
         <span style={{
           marginLeft: 'auto',
           fontFamily: 'IBM Plex Mono, monospace',

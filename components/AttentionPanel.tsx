@@ -69,7 +69,7 @@ export default function AttentionPanel() {
       <div className="panel-header" style={{ borderLeft: 'none' }}>
         <span>⚡</span>
         <span>ATTENTION</span>
-        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>// 注意</span>
+        <span className="noto" style={{ fontSize: 9, color: 'var(--gray-blue)' }}>注意</span>
         {count > 0 && (
           <span
             className="badge-pulse"
